@@ -141,7 +141,7 @@ public class ProgressBar extends Canvas {
 
     void drawBar(Graphics g) {
         int barEnd = (int) (width * slowX);
-        g.setColor(barColor);
+        g.setColor(Color.getHSBColor(((float)(System.currentTimeMillis()%1000))/1000, 0.5f, 1.0f));
         g.fillRect(x, y, barEnd, height);
         if (dualDisplay && fastX > 0) {
             int dotPos = (int) (width * fastX);
